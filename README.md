@@ -1,12 +1,12 @@
-# SANDSTORM x10
+# RAID O'CLOCK 10x
 
-**EU modded Rust server · 250 slots · wipes every Monday and Thursday 20:00 CET (21:00 Lebanon time) · max 6 per team**
+**EU modded Rust server · 250 slots · wipes once a month, the first Thursday 20:00 CET (21:00 Lebanon time) · max 6 per team**
 
 ```
 client.connect 2.59.169.7:28015
 ```
 
-In game, open the **Modded** tab and search for **Sandstorm**, or press **F1** and paste the line above.
+In game, open the **Modded** tab and search for **Raid O'Clock**, or press **F1** and paste the line above.
 
 **Website:** [unclemoe26.github.io/sandstorm-x10](https://unclemoe26.github.io/sandstorm-x10/), with a one-click Join button and a countdown to the next wipe.
 
@@ -20,6 +20,9 @@ In game, open the **Modded** tab and search for **Sandstorm**, or press **F1** a
 
 - x10 gather, crafting capped at 3 seconds, fast smelting and recycling
 - **No BPs**: every blueprint is unlocked from the start
+- **TC auto-repair**: your cupboard repairs your base by itself, 30 seconds after the last hit, paid from the TC like a hammer repair
+- **TC upgrade button**: upgrade your whole base to stone, metal or HQM from the TC in one click, with any building skin you own
+- **A whole month per map**: the map only wipes with Rust's monthly update
 - `/mymini`: your own fuelled minicopter (`/nomini` puts it away)
 - `/shop`: buy guns, armor, ammo, resources and raid gear with scrap
 - Events every hour: a locked crate at a monument or a supply drop, marked on the map
@@ -40,9 +43,8 @@ In game, open the **Modded** tab and search for **Sandstorm**, or press **F1** a
 
 | | |
 |---|---|
-| Map wipe | Every Monday and Thursday, 20:00 CET / 21:00 Lebanon time |
+| Map wipe | Once a month: the first Thursday, 20:00 CET / 21:00 Lebanon time, together with Rust's monthly update |
 | Blueprints | Not needed: every blueprint is unlocked (No BPs) |
-| Facepunch forced wipe | First Thursday of the month (same time) |
 
 The server name shows the last wipe date, for example `Wiped 30/10`. On wipe days before the wipe it reads `WIPE TONIGHT 21:00 LB`, and for 24 hours after a wipe `JUST WIPED`.
 

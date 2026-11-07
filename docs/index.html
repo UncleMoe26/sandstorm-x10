@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SANDSTORM 10x | EU modded Rust server, wipes Monday and Thursday</title>
-<meta name="description" content="SANDSTORM x10: EU modded Rust server with a fresh map every Monday and Thursday 20:00 CET / 21:00 Lebanon. No BPs, /shop, hourly events, free skins, kits, teleport, /mymini, max 6 per team, 250 slots.">
+<title>RAID O'CLOCK 10x | EU modded Rust server, monthly wipe</title>
+<meta name="description" content="RAID O&#39;CLOCK 10x: EU modded Rust server, wipes once a month on the first Thursday 20:00 CET / 21:00 Lebanon. No BPs, TC auto-repair, upgrade your whole base from the TC, /shop, hourly events, free skins, kits, teleport, /mymini, max 6 per team, 250 slots.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unclemoe26.github.io/sandstorm-x10/">
-<meta property="og:title" content="SANDSTORM 10x | Wipes every Monday and Thursday">
-<meta property="og:description" content="x10 gather, no BPs, /shop, hourly events, free skins, free wipe kit, kits, teleport, max 6. EU, 250 slots. client.connect 2.59.169.7:28015">
+<meta property="og:title" content="RAID O&#39;CLOCK 10x | Monthly wipe, No BPs, TC auto-repair">
+<meta property="og:description" content="x10 gather, no BPs, TC auto-repair, /shop, hourly events, free skins, free wipe kit, kits, teleport, max 6. EU, 250 slots. client.connect 2.59.169.7:28015">
 <meta property="og:image" content="https://unclemoe26.github.io/sandstorm-x10/header.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="logo.png">
@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
 <style>
-/* Same look as the server logo: storm-dark sky, the sand-to-orange SANDSTORM gradient, the amber lightning bolt */
+/* Same look as the server logo: dark ember sky, the sand-to-orange title gradient, the amber alarm clock */
 :root {
   --bg: #141110; --panel: #1e1a17; --panel2: #27211c; --line: #3a3029;
   --ink: #f1ece6; --muted: #b0a597;
@@ -92,10 +92,10 @@ footer div { max-width: 1040px; margin: 0 auto; padding: 24px 20px; display: fle
 
 <header class="hero">
   <div class="hero-in">
-    <img src="logo.png" alt="SANDSTORM x10 logo" width="200" height="200">
+    <img src="logo.png" alt="RAID O&#39;CLOCK 10x logo" width="200" height="200">
     <div>
-      <h1><span>Sandstorm</span> x10</h1>
-      <p class="tagline">EU modded Rust server with a fresh map every Monday and Thursday. x10 gather, no BPs, a scrap shop, hourly loot events, free skins, kits, teleport and /mymini. Max 6 per team.</p>
+      <h1><span>Raid O&#39;Clock</span> 10x</h1>
+      <p class="tagline">EU modded Rust server with a whole month per map. x10 gather, no BPs, a TC that repairs your base, a scrap shop, hourly loot events, free skins, kits, teleport and /mymini. Max 6 per team.</p>
       <div class="actions">
         <a class="btn primary" href="steam://connect/2.59.169.7:28015">&#9889; Join the server</a>
         <button class="btn ghost" type="button" id="copy">Copy connect command</button>
@@ -109,7 +109,7 @@ footer div { max-width: 1040px; margin: 0 auto; padding: 24px 20px; display: fle
 <main>
 
   <div class="facts" aria-label="Server facts">
-    <div class="fact wipe"><b id="wipe-label">Next wipe</b><span id="countdown">Mon &amp; Thu</span><small id="wipe-when">20:00 CET / 21:00 Lebanon</small></div>
+    <div class="fact wipe"><b id="wipe-label">Next wipe</b><span id="countdown">Monthly</span><small id="wipe-when">first Thursday, 20:00 CET / 21:00 Lebanon</small></div>
     <div class="fact"><b>Map</b><span>4500</span><small>Launch Site + Bradley every wipe</small></div>
     <div class="fact"><b>Slots</b><span>250</span><small>EU, Modded tab, max 6 per team</small></div>
     <div class="fact"><b>Server</b><span>Netherlands</span><small>about 63 ms from Lebanon</small></div>
@@ -129,6 +129,9 @@ footer div { max-width: 1040px; margin: 0 auto; padding: 24px 20px; display: fle
     <ul class="feats">
       <li>x10 gather on every node, tree and pickup</li>
       <li><b>No BPs:</b> every blueprint is unlocked from the start, no research</li>
+      <li><b>TC auto-repair:</b> your cupboard repairs your base by itself, 30 seconds after the last hit, paid from the TC like a hammer repair</li>
+      <li><b>TC upgrade button:</b> upgrade your whole base to stone, metal or HQM in one click, with any building skin you own</li>
+      <li><b>A whole month per map:</b> wipes only with Rust's monthly update, so your base lasts</li>
       <li><b>/mymini:</b> your own fuelled minicopter whenever you want</li>
       <li><b>/shop:</b> buy guns, armor, ammo, resources and raid gear with scrap</li>
       <li><b>Events every hour:</b> a locked crate at a monument or a supply drop, marked on the map</li>
@@ -152,7 +155,7 @@ footer div { max-width: 1040px; margin: 0 auto; padding: 24px 20px; display: fle
     <h2>How to join</h2>
     <ol class="join">
       <li><h3>One click</h3><p>Press <b>Join the server</b> at the top of this page. Steam starts Rust and connects you.</p></li>
-      <li><h3>Server browser</h3><p>Open Rust, press <b>Play Game</b>, go to the <b>Modded</b> tab and search <b>Sandstorm</b>.</p></li>
+      <li><h3>Server browser</h3><p>Open Rust, press <b>Play Game</b>, go to the <b>Modded</b> tab and search <b>Raid O&#39;Clock</b>.</p></li>
       <li><h3>Console</h3><p>In Rust press <b>F1</b> and paste <code>client.connect 2.59.169.7:28015</code>, then press Enter.</p></li>
     </ol>
   </section>
@@ -172,6 +175,7 @@ footer div { max-width: 1040px; margin: 0 auto; padding: 24px 20px; display: fle
       <tr><td>/mymini</td><td>Your own minicopter with fuel (every 10 minutes). <b>/nomini</b> puts it away</td></tr>
       <tr><td>/backpack</td><td>Extra storage that travels with you</td></tr>
       <tr><td>/remove</td><td>Remove your own building parts</td></tr>
+      <tr><td>Open your TC</td><td><b>Upgrade</b> button: the whole base to stone, metal or HQM, with a skin you own. The TC also repairs the base by itself</td></tr>
       <tr><td>/grade hqm</td><td>New building parts are placed at that grade (wood, stone, metal, hqm, off)</td></tr>
     </table></div>
   </section>
@@ -179,9 +183,8 @@ footer div { max-width: 1040px; margin: 0 auto; padding: 24px 20px; display: fle
   <section>
     <h2>Wipe schedule</h2>
     <div class="table"><table>
-      <tr><td>Map wipe</td><td>Every Monday and Thursday, 20:00 CET / 21:00 Lebanon time</td></tr>
+      <tr><td>Map wipe</td><td>Once a month: the first Thursday, 20:00 CET / 21:00 Lebanon time, together with Rust's monthly update</td></tr>
       <tr><td>Blueprints</td><td>Not needed: every blueprint is unlocked (No BPs)</td></tr>
-      <tr><td>Forced wipe</td><td>Facepunch's monthly update, first Thursday of the month, same time</td></tr>
     </table></div>
   </section>
 
@@ -197,7 +200,7 @@ footer div { max-width: 1040px; margin: 0 auto; padding: 24px 20px; display: fle
 </main>
 
 <footer><div>
-  <span>SANDSTORM x10 · <code>client.connect 2.59.169.7:28015</code></span>
+  <span>RAID O&#39;CLOCK 10x · <code>client.connect 2.59.169.7:28015</code></span>
   <span>The server's plugins are open source on <a href="https://github.com/UncleMoe26/sandstorm-x10">GitHub</a></span>
 </div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -212,7 +215,7 @@ document.getElementById('copy').addEventListener('click', function () {
   else say(cmd);
 });
 
-// Wipe countdown: every Monday and Thursday 20:00 Amsterdam time (21:00 Lebanon)
+// Wipe countdown: the first Thursday of every month, 20:00 Amsterdam time (21:00 Lebanon)
 var zone = 'Europe/Amsterdam';
 function partsIn(date) {
   var p = {};
@@ -232,9 +235,9 @@ function amsterdam20(y, m, d) {
 }
 function wipes(now) {
   var t = partsIn(new Date(now)), last = null, next = null;
-  for (var k = -7; k <= 8; k++) {
+  for (var k = -40; k <= 40; k++) {
     var day = new Date(Date.UTC(t.year, t.month - 1, t.day + k));
-    if (day.getUTCDay() !== 1 && day.getUTCDay() !== 4) continue;
+    if (day.getUTCDay() !== 4 || day.getUTCDate() > 7) continue;
     var at = amsterdam20(day.getUTCFullYear(), day.getUTCMonth() + 1, day.getUTCDate());
     if (at <= now) last = at; else if (next === null) next = at;
   }
@@ -257,7 +260,7 @@ function tick() {
     out.textContent = (d ? d + 'd ' : '') + h + 'h ' + m + 'm';
   }
   var local = new Date(w.next).toLocaleString([], { weekday: 'short', hour: '2-digit', minute: '2-digit' });
-  var dayName = new Date(w.next).toLocaleString('en-GB', { timeZone: zone, weekday: 'long' });
+  var dayName = new Date(w.next).toLocaleString('en-GB', { timeZone: zone, weekday: 'long', day: 'numeric', month: 'long' });
   when.textContent = dayName + ' 20:00 CET / 21:00 Lebanon (' + local + ' your time)';
 }
 tick();

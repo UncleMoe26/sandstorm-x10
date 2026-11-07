@@ -57,7 +57,7 @@ namespace Oxide.Plugins
                 player.ChatMessage("Voting isn't set up yet. Check back soon!");
                 return;
             }
-            player.ChatMessage($"<color=#e0b030>Vote for SANDSTORM x10:</color> <color=#9fd0ff>{config.VoteUrl}</color>\n" +
+            player.ChatMessage($"<color=#e0b030>Vote for RAID O'CLOCK 10x:</color> <color=#9fd0ff>{config.VoteUrl}</color>\n" +
                                "Log in with Steam when you vote, then come back and type <color=#9fd0ff>/claimvote</color> for your reward. You can vote once a day.");
         }
 

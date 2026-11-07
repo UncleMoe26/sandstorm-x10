@@ -6,11 +6,11 @@ using Oxide.Core;
 
 namespace Oxide.Plugins
 {
-    [Info("Discord Announce", "Uncle Moe", "1.1.0")]
+    [Info("Discord Announce", "Uncle Moe", "1.2.0")]
     [Description("Posts wipe countdowns, 'just wiped' and player-count milestones to a Discord channel through a webhook")]
     class DiscordAnnounce : RustPlugin
     {
-        // The wipes (scheduler.sh): Monday and Thursday 20:00 Amsterdam = 21:00 Lebanon
+        // The wipe (scheduler.sh): once a month, the first Thursday, 20:00 Amsterdam = 21:00 Lebanon
         const int WipeHour = 20;
         const string Connect = "client.connect 2.59.169.7:28015";
         static readonly int[] Milestones = { 5, 10, 20, 30, 50, 75, 100 };
@@ -77,7 +77,7 @@ namespace Oxide.Plugins
                     "Fresh map is live right now. Free **/wipekit** for the first 2 hours, so get in early!");
 
             // Wipe-day countdown
-            if ((local.DayOfWeek == DayOfWeek.Monday || local.DayOfWeek == DayOfWeek.Thursday) && hoursSinceWipe > 12)
+            if (local.DayOfWeek == DayOfWeek.Thursday && local.Day <= 7 && hoursSinceWipe > 12)
             {
                 if (local.Hour >= 12 && local.Hour < WipeHour - 2)
                     Once("today:" + day, "⏰ WIPE TONIGHT", "Fresh map tonight at **21:00 Lebanon / 20:00 CET**. Free **/wipekit** for the first 2 hours after the wipe.");
@@ -91,7 +91,7 @@ namespace Oxide.Plugins
             int online = BasePlayer.activePlayerList.Count;
             int reached = Milestones.Where(m => online >= m).DefaultIfEmpty(0).Max();
             if (reached > 0)
-                Once($"players:{reached}:{day}", $"🔥 {online} PLAYERS ONLINE", $"SANDSTORM x10 is busy right now with **{online}/{ConVar.Server.maxplayers}** players. Jump in!");
+                Once($"players:{reached}:{day}", $"🔥 {online} PLAYERS ONLINE", $"RAID O'CLOCK 10x is busy right now with **{online}/{ConVar.Server.maxplayers}** players. Jump in!");
         }
 
         void Once(string key, string title, string text)
@@ -106,11 +106,11 @@ namespace Oxide.Plugins
 
         void Post(string title, string text)
         {
-            string links = $"**Join:** `{Connect}` (Modded tab, search \"Sandstorm\")\n**Website:** {config.WebsiteUrl}" +
+            string links = $"**Join:** `{Connect}` (Modded tab, search \"Raid O'Clock\")\n**Website:** {config.WebsiteUrl}" +
                            (string.IsNullOrEmpty(config.InviteUrl) ? "" : $"\n**Discord:** {config.InviteUrl}");
             var payload = new
             {
-                username = "SANDSTORM x10",
+                username = "RAID O'CLOCK 10x",
                 avatar_url = config.WebsiteUrl + "logo.png",
                 embeds = new[]
                 {
@@ -136,7 +136,7 @@ namespace Oxide.Plugins
         {
             if (arg.Connection != null) return;
             if (!Ready) { Puts("Webhook not set"); return; }
-            Post("✅ SANDSTORM x10 is connected", "Wipe countdowns, 'just wiped' and player milestones will be posted here automatically.");
+            Post("✅ RAID O'CLOCK 10x is connected", "Wipe countdowns, 'just wiped' and player milestones will be posted here automatically.");
             Puts("Test message sent");
         }
     }

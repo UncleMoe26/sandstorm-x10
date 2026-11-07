@@ -1,11 +1,12 @@
 # Next steps
 
-Status on 3 November 2026, and what's left to set up before the wipe on **Thursday 5 November, 21:00 Lebanon / 20:00 CET**. From then on the map wipes every **Monday and Thursday** at the same time.
+Status on 7 November 2026. The server is now **RAID O'CLOCK 10x** (was SANDSTORM x10) and wipes **once a month**, on the first Thursday at 21:00 Lebanon / 20:00 CET. Next wipe: **Thursday 3 December**.
 
 ## Done
 
-- Server live: EU, 250 slots, 4500 map with Launch Site and the Bradley, wipes every Monday and Thursday, max 6 per team
+- Server live: EU, 250 slots, 4500 map with Launch Site and the Bradley, wipes monthly (first Thursday), max 6 per team
 - Matched to the busiest 10x servers: No BPs, `/shop` (scrap), hourly events (locked crates and supply drops), `/skin` free skins, `/mymini`
+- TC auto-repair and a TC upgrade button (whole base to stone, metal or HQM, with owned skins)
 - Free loot in game: `/wipekit` after every wipe, `/invite` rewards for both players, `/kit`
 - Server name changes by itself: `WIPE TONIGHT 21:00 LB` on wipe days, `JUST WIPED` for a day after
 - Website with a one-click Join button and a wipe countdown: https://unclemoe26.github.io/sandstorm-x10/ (also the in-game Website button)
@@ -17,7 +18,7 @@ Status on 3 November 2026, and what's left to set up before the wipe on **Thursd
 ## To do
 
 ### 0. Listings
-- [ ] rust-servers.net: update the title to `[EU] SANDSTORM 10x | Wipes Mon & Thu | No BPs | Shop | Kits | Max 6` and the description
+- [ ] rust-servers.net: update the title to `[EU] RAID O'CLOCK 10x | Monthly | No BPs | TC Auto-Repair | Shop | Kits | Max 6` and the description
 - [ ] BattleMetrics: claim the server (free), add the Discord and the description
 - [ ] Also list on just-wiped.net, rust-servers.info and top-games (each needs an account you make yourself)
 - [ ] Friends and Discord members `/vote` every day

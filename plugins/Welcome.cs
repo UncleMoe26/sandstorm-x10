@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Oxide.Plugins
 {
-    [Info("Welcome", "Uncle Moe", "1.8.0")]
+    [Info("Welcome", "Uncle Moe", "1.9.0")]
     [Description("Greets players, shows a welcome popup, reminds about kits and posts the online count")]
     class Welcome : RustPlugin
     {
         const string Message =
-            "<color=#e0b030>Welcome to SANDSTORM x10!</color> x10 gather, no BPs, fast craft, fast smelt, boosted loot. <color=#ffcc00>Wipes every Monday and Thursday 21:00 Lebanon time.</color>\n" +
+            "<color=#e0b030>Welcome to RAID O'CLOCK 10x!</color> x10 gather, no BPs, fast craft, fast smelt, boosted loot. <color=#ffcc00>Wipes once a month: the first Thursday, 21:00 Lebanon time.</color>\n" +
             "<color=#9fd0ff>/shop</color>  <color=#9fd0ff>/skin</color>  <color=#9fd0ff>/kit</color> starter kit  <color=#9fd0ff>/sethome</color> <color=#9fd0ff>/home</color> <color=#9fd0ff>/tpr</color> teleport  <color=#9fd0ff>/backpack</color>  <color=#9fd0ff>/mymini</color>  <color=#9fd0ff>/remove</color>  <color=#9fd0ff>/grade hqm</color>\n" +
-            "Locked crate or airdrop event every hour. Bring your friends with <color=#9fd0ff>/invite</color> and you both get free loot!";
+            "<color=#ffcc00>Your TC repairs your base by itself!</color> Locked crate or airdrop event every hour. Bring your friends with <color=#9fd0ff>/invite</color> and you both get free loot!";
 
         const string KitReminder =
             "<color=#ffcc00>FREE KITS!</color> Type <color=#9fd0ff>/kit</color> to open the kit menu. The starter kit can be claimed every 20 minutes.";
@@ -21,7 +21,8 @@ namespace Oxide.Plugins
             "<color=#e0b030>SERVER</color>\n" +
             "x10 gather  •  <color=#ffcc00>No BPs: every blueprint unlocked</color>  •  fast craft (3s max)  •  fast smelt and recycle  •  boosted loot\n" +
             "Scientists, heavies, animals and the Bradley at Launch Site  •  <color=#ffcc00>loot events every hour</color> (locked crates, airdrops)\n" +
-            "<color=#ffcc00>Wipes: every Monday and Thursday 21:00 Lebanon time</color>  •  max 6 per team\n\n" +
+            "<color=#ffcc00>Wipes: monthly, the first Thursday 21:00 Lebanon time</color>  •  max 6 per team\n" +
+            "<color=#ffcc00>TC AUTO-REPAIR:</color> your cupboard repairs your base by itself, 30 s after the last hit (paid from the TC, keep it stocked)\n\n" +
             "<color=#e0b030>COMMANDS</color>\n" +
             "<color=#9fd0ff>/kit</color>  free kits (starter kit every 20 minutes)\n" +
             "<color=#9fd0ff>/sethome name</color>  then  <color=#9fd0ff>/home name</color>  teleport home (3 homes)\n" +
@@ -77,7 +78,7 @@ namespace Oxide.Plugins
         {
             if (player == null || !seen.Add(player.userID)) return;
             SaveSeen();
-            PrintToChat($"<color=#e0b030>Everyone welcome</color> <color=#9fd0ff>{player.displayName}</color> <color=#e0b030>to SANDSTORM x10!</color> First time on the server.");
+            PrintToChat($"<color=#e0b030>Everyone welcome</color> <color=#9fd0ff>{player.displayName}</color> <color=#e0b030>to RAID O'CLOCK 10x!</color> First time on the server.");
         }
 
         void OnPlayerSleepEnded(BasePlayer player)
@@ -130,7 +131,7 @@ namespace Oxide.Plugins
             }, PopupName);
             c.Add(new CuiLabel
             {
-                Text = { Text = "WELCOME TO SANDSTORM x10", FontSize = 26, Font = "robotocondensed-bold.ttf", Align = TextAnchor.MiddleCenter, Color = "0.88 0.69 0.19 1" },
+                Text = { Text = "WELCOME TO RAID O'CLOCK 10x", FontSize = 26, Font = "robotocondensed-bold.ttf", Align = TextAnchor.MiddleCenter, Color = "0.88 0.69 0.19 1" },
                 RectTransform = { AnchorMin = "0.03 0.87", AnchorMax = "0.97 0.97" }
             }, PopupName);
             c.Add(new CuiLabel

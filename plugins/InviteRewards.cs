@@ -132,7 +132,7 @@ namespace Oxide.Plugins
                 data.Pending.TryGetValue(inviterId, out pending);
                 data.Pending[inviterId] = pending + 1;
             }
-            PrintToChat($"<color=#e0b030>{InviterName(inviterId)}</color> brought <color=#9fd0ff>{friend.displayName}</color> to SANDSTORM x10 and they both got rewards! Type <color=#9fd0ff>/invite</color> to get your own code.");
+            PrintToChat($"<color=#e0b030>{InviterName(inviterId)}</color> brought <color=#9fd0ff>{friend.displayName}</color> to RAID O'CLOCK 10x and they both got rewards! Type <color=#9fd0ff>/invite</color> to get your own code.");
         }
 
         void Remind()
@@ -155,7 +155,7 @@ namespace Oxide.Plugins
             int count;
             data.Recruits.TryGetValue(player.userID, out count);
             player.ChatMessage($"<color=#e0b030>Your invite code:</color> <color=#ffcc00>{CodeFor(player.userID)}</color>\n" +
-                               $"Tell your friends to join <color=#e0b030>SANDSTORM x10</color> (search \"Sandstorm\" in the Modded tab) and type <color=#9fd0ff>/invited {CodeFor(player.userID)}</color>.\n" +
+                               $"Tell your friends to join <color=#e0b030>RAID O'CLOCK 10x</color> (search \"Raid O'Clock\" in the Modded tab) and type <color=#9fd0ff>/invited {CodeFor(player.userID)}</color>.\n" +
                                $"When they've played {MinutesToQualify} minutes, you get <color=#55ff55>500 scrap, a semi-auto rifle, ammo and syringes</color>, and they get a starter pack.\n" +
                                $"Friends brought so far: {count}/{MaxRewardsPerInviter}.  <color=#9fd0ff>/invite top</color> shows the top recruiters.");
         }

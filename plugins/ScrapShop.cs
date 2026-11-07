@@ -121,7 +121,7 @@ namespace Oxide.Plugins
 
             ui.Add(new CuiLabel
             {
-                Text = { Text = $"<color=#e0b030>SANDSTORM SHOP</color>   you have <color=#ffcc00>{player.inventory.GetAmount(ScrapId)} scrap</color>", FontSize = 18, Align = TextAnchor.MiddleLeft },
+                Text = { Text = $"<color=#e0b030>RAID O'CLOCK SHOP</color>   you have <color=#ffcc00>{player.inventory.GetAmount(ScrapId)} scrap</color>", FontSize = 18, Align = TextAnchor.MiddleLeft },
                 RectTransform = { AnchorMin = "0.02 0.92", AnchorMax = "0.8 0.99" },
             }, Ui);
             ui.Add(new CuiButton

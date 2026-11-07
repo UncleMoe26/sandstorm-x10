@@ -5,11 +5,11 @@ using Oxide.Core;
 
 namespace Oxide.Plugins
 {
-    [Info("Wipe Event", "Uncle Moe", "1.1.0")]
-    [Description("Wipe night: the server name shows WIPE TONIGHT on wipe days (Monday and Thursday) and JUST WIPED for a day after, and /wipekit gives a free starter pack in the first 2 hours of a wipe")]
+    [Info("Wipe Event", "Uncle Moe", "1.2.0")]
+    [Description("Wipe night: the server name shows WIPE TONIGHT on wipe day (the first Thursday of the month) and JUST WIPED for a day after, and /wipekit gives a free starter pack in the first 2 hours of a wipe")]
     class WipeEvent : RustPlugin
     {
-        // The wipes (scheduler.sh): Monday and Thursday 20:00 Amsterdam = 21:00 Lebanon
+        // The wipe (scheduler.sh): once a month, the first Thursday (Facepunch's update day), 20:00 Amsterdam = 21:00 Lebanon
         const int WipeHour = 20;
         const double WipeKitHours = 2;
         const double JustWipedHours = 24;
@@ -64,13 +64,23 @@ namespace Oxide.Plugins
             return DateTime.UtcNow.AddHours(1);
         }
 
+        static bool FirstThursday(DateTime d) => d.DayOfWeek == DayOfWeek.Thursday && d.Day <= 7;
+
+        // The next first Thursday of a month, from the given day on
+        static DateTime NextWipe(DateTime from)
+        {
+            DateTime d = from.Date;
+            while (!FirstThursday(d) || (d == from.Date && from.Hour >= WipeHour)) d = d.AddDays(1);
+            return d;
+        }
+
         void UpdateName()
         {
             string name = baseName;
             DateTime local = AmsterdamNow();
             if (HoursSinceWipe < JustWipedHours)
                 name = WipedPart.Replace(baseName, "JUST WIPED");
-            else if ((local.DayOfWeek == DayOfWeek.Monday || local.DayOfWeek == DayOfWeek.Thursday) && local.Hour < WipeHour)
+            else if (FirstThursday(local) && local.Hour < WipeHour)
                 name = WipedPart.Replace(baseName, "WIPE TONIGHT 21:00 LB");
             if (ConVar.Server.hostname != name) ConVar.Server.hostname = name;
         }
@@ -93,7 +103,7 @@ namespace Oxide.Plugins
         {
             if (!WipeKitOpen)
             {
-                player.ChatMessage("The wipe kit is only available in the first 2 hours after a wipe. Next wipe: <color=#ffcc00>Monday or Thursday 21:00 Lebanon time</color>, whichever comes first.");
+                player.ChatMessage("The wipe kit is only available in the first 2 hours after a wipe. Next wipe: <color=#ffcc00>{NextWipe(AmsterdamNow()):dddd d MMMM} 21:00 Lebanon time</color> (once a month).");
                 return;
             }
             if (!data.Claimed.Add(player.userID))
